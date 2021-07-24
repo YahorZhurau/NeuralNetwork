@@ -1,58 +1,46 @@
-from math import sqrt
-from random import randint, sample
+from tkinter import *
+
+# def fact(n):
+#     f = 1
+#     for i in range(1, n + 1):
+#         f *= i
+#     print(f'{f}')
+#
+#
+# fact(int(input()))
+
+counter = 0
+#
+#
+# def rec():
+#     global counter
+#     print(counter)
+#     counter += 1
+#     if counter < 10:
+#         rec()
+#
+#
+# rec()
+
+d1 = int(input()) * 10
+d2 = int(input()) * 10
 
 
-def print_hi(name): {
-    print(f'Hi, {name}'),
-}
+def romb(d1, d2):
+    root = Tk()
+    root.geometry('1000x1000')
+    root.resizable(width=False, height=False)
+    canvas = Canvas(root, height=d1 * 2, width=d2 * 2)
+    print(f'{d1} {d1 / 2} {d2} {d2 / 2}')
+    canvas.create_line(d1 / 2, 0, d1, d2 / 2)
+    canvas.create_line(d1, d2 / 2, d1 / 2, d2)
+    canvas.create_line(d1 / 2, d2, 0, d2 / 2)
+    canvas.create_line(0, d2 / 2, d1 / 2, 0)
+    canvas.pack()
+    root.mainloop()
 
 
-def kv(a, b, c):
-    d = b * b - 4 * a * c
-    if d > 0:
-        x1 = (-b + sqrt(d)) / (2 * a),
-        x2 = (-b - sqrt(d)) / (2 * a),
-        print(f'{x1} {x2}')
-    else:
-        print('sosi kak bы')
-
-
-def calc():
-    ar1 = [[randint(0, 10) for i in range(3)] for j in range(3)]
-    ar2 = [[randint(0, 10) for i in range(3)] for j in range(3)]
-    ar = [[0 for i in range(3)] for j in range(3)]
-    for i in range(0, 3):
-        for j in range(0, 3):
-            ar[i][j] = ar1[i][j] + ar2[i][j]
-            print(f'{ar1[i][j]} {ar2[i][j]} {ar[i][j]}')
-
-
-class Horny:
-    def __init__(self, b, v):
-        self.vaginas_size = v
-        self.boobs_size = b
-
-    speed = False
-
-    def sex_index(self, penis=14):
-        print(f'{self.boobs_size} {self.vaginas_size} {penis} I GOING TO VACUUM')
-
-    @staticmethod
-    def smoking():
-        print(f'it`s so fucking cool Cigarettes')
-
-
-# calc()
-# kv(int(input()), int(input()), int(input()))
-# print_hi('retard')
-
-horny1 = Horny(2.5, 51)
-horny1.sex_index()
-
-horny2 = Horny(3, 14)
-horny2.sex_index(9)
-horny2.smoking()
-
-print(Horny.speed)
-Horny.smoking()
-
+if d1 % 2 != 0 | d2 % 2 != 0:
+    print('Ты наебер!!!')
+else:
+    romb(d1, d2)
